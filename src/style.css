@@ -38,9 +38,10 @@ body {
   align-items: center;
   min-height: 4rem;
   padding-inline: var(--inline-padding);
-  background-color: #000;
+  background-color: var(--clr-accent);
   font-size: 1.4rem;
-  color: #fff;
+  font-weight: 600;
+  color: #000;
 }
 
 .site-footer > * {
