@@ -2,7 +2,7 @@ export function addContactHtml(node) {
   node.innerHTML = `
     <section class="contact-content">
       <div>
-        <h2>Contact info</h2>
+        <h2 class="margin-top-0">Contact info</h2>
         <ul>
           <li><i class="fas fa-home"></i> 777 Noodle St, Phoville, ON G3T 5E7</li>
           <li><i class="fas fa-phone"></i> (800) PHO-4-YOU</li>
@@ -16,7 +16,7 @@ export function addContactHtml(node) {
         </ul>
       </div>
       <div>
-        <h2>Opening hours</h2>
+        <h2 class="margin-top-0">Opening hours</h2>
         <dl class="opening-hours-grid">
           <dt>Monday</dt>
           <dd>11:00am - 8:00pm</dd>
