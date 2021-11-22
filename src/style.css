@@ -1,12 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Eczar:wght@700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+/**
+ * Base rules
+ */
+
 :root {
   font-size: 10px;
   --ff-text: "Noto Sans", Arial, Helvetica, sans-serif;
   --ff-headings: Eczar, "Times New Roman", Times, serif;
   --clr-light-grey: #8e8e8e;
   --clr-accent: #ffff00;
-  --inline-padding: 2rem;
+  --global-padding: 4rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-headings);
+  font-weight: 800;
+}
+h1 {
+  font-size: 3.2rem;
+}
+h2 {
+  margin-top: 3rem;
+  font-size: 2.8rem;
+}
+h3 {
+  font-size: 2.4rem;
+}
+
+a,
+a:visited {
+  color: var(--clr-light-grey);
 }
 
 /* Layout rules */
@@ -24,7 +50,7 @@ body {
   display: flex;
   justify-content: space-between;
   min-height: 6rem;
-  padding-inline: var(--inline-padding);
+  padding-inline: var(--global-padding);
   background-color: #000;
   color: #fff;
 }
@@ -37,7 +63,7 @@ body {
   display: flex;
   align-items: center;
   min-height: 4rem;
-  padding-inline: var(--inline-padding);
+  padding-inline: var(--global-padding);
   background-color: var(--clr-accent);
   font-size: 1.4rem;
   font-weight: 600;
@@ -48,21 +74,32 @@ body {
   flex: 1;
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--ff-headings);
+.home-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 500px 400px;
 }
 
-/* Component rules */
+.menu-content {
+  display: grid;
+  padding: var(--global-padding);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: var(--global-padding);
+}
+
+/**
+ * Component rules
+ */
 
 .site-title {
   position: relative;
   bottom: -0.1rem;
   display: flex;
   align-items: center;
-  font-size: 3.2rem;
-  font-weight: 800;
 }
 
 .main-navigation * {
@@ -70,23 +107,19 @@ h3 {
   align-items: center;
   height: 100%;
 }
-
 .main-navigation ul {
   gap: 4rem;
 }
-
 .main-navigation a {
-  color: var(--clr-light-grey);
   font-size: 2rem;
   text-decoration: none;
+  color: var(--clr-light-grey);
   transition: color 0.1s ease-in;
 }
-
 .main-navigation a:hover,
 .main-navigation a:active {
   color: #fff;
 }
-
 .main-navigation a.active {
   box-sizing: border-box;
   border-top: solid 4px transparent;
@@ -94,25 +127,19 @@ h3 {
   color: var(--clr-accent);
 }
 
-.home-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 500px 400px;
-}
-
 .hero-banner {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   grid-column: span 2;
-  padding: var(--inline-padding);
+  padding: var(--global-padding);
   background-image: url("./images/hero-image.jpg");
   background-size: cover;
   background-position-y: center;
   color: #fff;
 }
-
 .hero-banner::before {
   position: absolute;
   top: 0;
@@ -124,28 +151,27 @@ h3 {
   opacity: 0.75;
   content: "";
 }
-
 .hero-banner * {
   position: relative;
 }
-
 .hero-banner .banner-text {
   font-size: 5rem;
 }
 
-.hero-banner .banner-button {
-  align-self: flex-start;
-  padding: 0.5em 2rem;
-  margin-top: 0.5em;
+.button,
+.button:visited {
+  display: inline-block;
+  padding: 0.2em 2rem;
+  margin-bottom: 0.5em;
   border: none;
   border-radius: 0.2em;
   background-color: var(--clr-accent);
-  font-size: 2.5rem;
+  text-decoration: none;
+  color: #000;
   transition: background-color 0.1s ease-in;
 }
-
-.hero-banner .banner-button:hover,
-.hero-banner .banner-button:focus {
+.button:hover,
+.button:focus {
   background-color: #afaf0e;
   cursor: pointer;
 }
@@ -154,17 +180,14 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--inline-padding);
+  padding: var(--global-padding);
 }
-
 .featured-quote blockquote {
   font-style: italic;
 }
-
 .featured-quote blockquote > footer {
   color: var(--clr-light-grey);
 }
-
 .featured-quote blockquote > footer::before {
   content: "–";
   margin-right: 0.4em;
@@ -183,4 +206,10 @@ h3 {
 
 .opening-hours-grid > dd {
   text-align: right;
+}
+
+/* Utility classes */
+
+.margin-top-0 {
+  margin-top: 0;
 }
