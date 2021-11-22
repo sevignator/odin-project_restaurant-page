@@ -1,4 +1,6 @@
 // Imports
+import "@fortawesome/fontawesome-free/js/all";
+
 import "reset-css";
 import "./style.css";
 

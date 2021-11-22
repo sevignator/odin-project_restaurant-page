@@ -4,7 +4,7 @@ export const homeHtml = `
   <section class="home-content">
     <div class="hero-banner">
       <p class="banner-text">The warmest pho in town, period.</p>
-      <button class="banner-button">Order online</button>
+      <a href="#" class="button">Order online</a>
     </div>
     <div class="featured-quote">
       <blockquote>
