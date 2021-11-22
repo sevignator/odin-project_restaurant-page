@@ -4,9 +4,9 @@ import "@fortawesome/fontawesome-free/js/all";
 import "reset-css";
 import "./style.css";
 
-import { homeHtml } from "./pages/home";
-import { menuHtml } from "./pages/menu";
-import { contactHtml } from "./pages/contact";
+import { addHomeHtml } from "./pages/home";
+import { addMenuHtml } from "./pages/menu";
+import { addContactHtml } from "./pages/contact";
 
 // Site header region
 const header = document.createElement("header");
@@ -57,30 +57,27 @@ document.body.insertAdjacentElement("beforeend", main);
 document.body.insertAdjacentElement("beforeend", footer);
 
 // Elements
-const linkElements = document.querySelectorAll(".main-navigation a");
-const mainElement = document.querySelector(".main-content");
+const menuLinks = document.querySelectorAll(".main-navigation a");
 
 // Functions
 function handleMenuClick(e) {
   e.preventDefault();
 
-  linkElements.forEach((element) => element.classList.remove("active"));
+  menuLinks.forEach((element) => element.classList.remove("active"));
   e.target.classList.add("active");
-
-  mainElement.textContent = "";
 
   switch (e.target.dataset.content) {
     case "home":
-      mainElement.insertAdjacentHTML("afterbegin", homeHtml);
+      addHomeHtml(main);
       break;
     case "menu":
-      mainElement.insertAdjacentHTML("afterbegin", menuHtml);
+      addMenuHtml(main);
       break;
     case "contact":
-      mainElement.insertAdjacentHTML("afterbegin", contactHtml);
+      addContactHtml(main);
       break;
   }
 }
 
 // Init
-mainElement.insertAdjacentHTML("afterbegin", homeHtml);
+addHomeHtml(main);

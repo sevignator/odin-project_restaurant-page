@@ -1,12 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Eczar:wght@700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+/* Base rules */
+
 :root {
   font-size: 10px;
   --ff-text: "Noto Sans", Arial, Helvetica, sans-serif;
   --ff-headings: Eczar, "Times New Roman", Times, serif;
   --clr-light-grey: #8e8e8e;
   --clr-accent: #ffff00;
-  --inline-padding: 4rem;
+  --global-padding: 4rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-headings);
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  margin-top: 3rem;
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+a,
+a:visited {
+  color: var(--clr-light-grey);
 }
 
 /* Layout rules */
@@ -24,7 +51,7 @@ body {
   display: flex;
   justify-content: space-between;
   min-height: 6rem;
-  padding-inline: var(--inline-padding);
+  padding-inline: var(--global-padding);
   background-color: #000;
   color: #fff;
 }
@@ -37,7 +64,7 @@ body {
   display: flex;
   align-items: center;
   min-height: 4rem;
-  padding-inline: var(--inline-padding);
+  padding-inline: var(--global-padding);
   background-color: var(--clr-accent);
   font-size: 1.4rem;
   font-weight: 600;
@@ -46,29 +73,6 @@ body {
 
 .site-footer > * {
   flex: 1;
-}
-
-/* Base rules */
-
-h1,
-h2,
-h3 {
-  font-family: var(--ff-headings);
-}
-
-h1 {
-  font-size: 3.2rem;
-  font-weight: 800;
-}
-
-h2 {
-  margin-top: 3rem;
-  font-size: 2.8rem;
-}
-
-a,
-a:visited {
-  color: var(--clr-light-grey);
 }
 
 /* Component rules */
@@ -115,13 +119,19 @@ a:visited {
   grid-template-rows: 500px 400px;
 }
 
+.menu-content {
+  display: grid;
+  padding: var(--global-padding);
+}
+
 .contact-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  padding: var(--inline-padding);
+  padding: var(--global-padding);
 }
 
-.contact-content > * > :first-child {
+.menu-content h2:first-child,
+.contact-content h2:first-child {
   margin-top: 0;
 }
 
@@ -131,7 +141,7 @@ a:visited {
   flex-direction: column;
   justify-content: center;
   grid-column: span 2;
-  padding: var(--inline-padding);
+  padding: var(--global-padding);
   background-image: url("./images/hero-image.jpg");
   background-size: cover;
   background-position-y: center;
@@ -186,7 +196,7 @@ a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--inline-padding);
+  padding: var(--global-padding);
 }
 
 .featured-quote blockquote {
