@@ -10,54 +10,42 @@ import { addContactHtml } from "./pages/contact";
 
 // Site header region
 const header = document.createElement("header");
-header.classList.add("site-header");
-
-const pageTitle = document.createElement("h1");
-pageTitle.classList.add("site-title");
-pageTitle.textContent = "Friends and Phos";
-header.appendChild(pageTitle);
-
-const mainNav = document.createElement("nav");
-mainNav.classList.add("main-navigation");
-header.appendChild(mainNav);
-
-const navUl = document.createElement("ul");
-mainNav.appendChild(navUl);
-
 const navLinks = ["home", "menu", "contact"];
-navLinks.forEach((link, index) => {
-  const listItem = document.createElement("li");
-  const linkTag = document.createElement("a");
+header.classList.add("site-header");
+header.innerHTML = `
+  <h1 class="site-title">Friends and Phos</h1>
+  <nav class="main-navigation">
+    <ul>
+      ${navLinks
+        .map((link, index) => {
+          return `<li><a href="#" data-content="${link}" ${
+            index === 0 ? 'class="active"' : ""
+          }>${link}</a></li>`;
+        })
+        .join("")}
+    </ul>
+  </nav>
+`;
 
-  linkTag.textContent = link;
-  linkTag.setAttribute("href", `#`);
-  linkTag.dataset.content = link;
-  linkTag.addEventListener("click", handleMenuClick);
-
-  if (index === 0) linkTag.classList.add("active");
-
-  listItem.appendChild(linkTag);
-  navUl.appendChild(listItem);
-});
-
-// Main content section
+// Main content region
 const main = document.createElement("main");
 main.classList.add("main-content");
 
-// Site footer section
+// Site footer region
 const footer = document.createElement("footer");
 footer.classList.add("site-footer");
 footer.innerHTML = `
   <p>Copyright © ${new Date().getFullYear()}. All rights reserved.</p>
 `;
 
-// Insert elements into the DOM
+// Insert regions into the DOM
 document.body.insertAdjacentElement("beforeend", header);
 document.body.insertAdjacentElement("beforeend", main);
 document.body.insertAdjacentElement("beforeend", footer);
 
 // Elements
 const menuLinks = document.querySelectorAll(".main-navigation a");
+menuLinks.forEach((link) => link.addEventListener("click", handleMenuClick));
 
 // Functions
 function handleMenuClick(e) {
@@ -79,5 +67,5 @@ function handleMenuClick(e) {
   }
 }
 
-// Init
+// Initialize
 addHomeHtml(main);

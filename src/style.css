@@ -35,7 +35,9 @@ a:visited {
   color: var(--clr-light-grey);
 }
 
-/* Layout rules */
+/**
+ * Layout rules
+ */
 
 body {
   display: flex;
@@ -208,7 +210,9 @@ body {
   text-align: right;
 }
 
-/* Utility classes */
+/**
+ * Utility classes
+ */
 
 .margin-top-0 {
   margin-top: 0;
