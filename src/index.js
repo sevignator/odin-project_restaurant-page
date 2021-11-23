@@ -34,9 +34,7 @@ main.classList.add("main-content");
 // Site footer region
 const footer = document.createElement("footer");
 footer.classList.add("site-footer");
-footer.innerHTML = `
-  <p>Copyright © ${new Date().getFullYear()}. All rights reserved.</p>
-`;
+footer.innerHTML = `Copyright © ${new Date().getFullYear()}. All rights reserved.`;
 
 // Insert regions into the DOM
 document.body.insertAdjacentElement("beforeend", header);

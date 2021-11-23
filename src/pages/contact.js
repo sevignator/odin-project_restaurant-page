@@ -4,7 +4,7 @@ export function addContactHtml(node) {
       <div>
         <h2 class="margin-top-0">Contact info</h2>
         <ul>
-          <li><i class="fas fa-home"></i> 777 Noodle St, Phoville, ON G3T 5E7</li>
+          <li><i class="fas fa-home"></i> 777 Noodle St, Phoville, ON E4T PH0</li>
           <li><i class="fas fa-phone"></i> (800) PHO-4-YOU</li>
           <li><i class="fas fa-at"></i> <a href="#">contact@friendsandphos.com</a></li>
         </ul>
