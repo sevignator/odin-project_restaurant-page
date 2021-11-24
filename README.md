@@ -6,7 +6,7 @@
 
 ## Description
 
-Project from the Odin Project's Full Stack JavaScript curriculum. The result should be a single HTML page with three tabs that dynamically renders the content on the page using JavaScript.
+Project from the Odin Project's Full Stack JavaScript curriculum. This is a single-page HTML document with three tabs that dynamically renders the content using JavaScript query selectors and event handlers.
 
 ## Technologies used
 
